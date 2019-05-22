@@ -213,6 +213,21 @@ mode "launcher" {
 
 bindsym $mod+o mode "launcher"
 
+# Display chooser
+set $mode_display Display: (d)uplicate, (e)xtend, (n)one
+set $output_display HDMI1
+
+mode "$mode_display" {
+    bindsym d exec --no-startup-id xrandr --output $output_display --mode 1920x1080 --same-as eDP1; mode "default"
+    bindsym e exec --no-startup-id xrandr --output $output_display --mode 1920x1080 --right-of eDP1; mode "default"
+    bindsym n exec --no-startup-id xrandr --output $output_display --off; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+p mode "$mode_display"
+
+
 # Programs that will start on startup
 exec firefox
 assign [class="^Firefox$"] "1: firefox"
