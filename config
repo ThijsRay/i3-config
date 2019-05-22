@@ -41,7 +41,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi calc,emoji,drun,run -theme solarized_alternate -show combi -modi combi,'calc:qalc +u8' -font 'Noto Sans Mono 12'"
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi calc,drun,emoji,run -theme solarized_alternate -show combi -modi combi,'calc:qalc +u8' -font 'Noto Sans Mono 12'"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -226,7 +226,6 @@ mode "$mode_display" {
     bindsym Escape mode "default"
 }
 bindsym $mod+p mode "$mode_display"
-
 
 # Programs that will start on startup
 exec firefox
