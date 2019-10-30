@@ -235,7 +235,7 @@ bindsym $mod+p mode "$mode_display"
 
 # Programs that will start on startup
 exec firefox
-assign [class="^Firefox$"] "1: firefox"
+assign [class="^firefox$"] "1: firefox"
 exec keepassxc
 assign [class="^keepassxc$"] "0: keepass"
 
