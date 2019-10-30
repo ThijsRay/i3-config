@@ -56,7 +56,7 @@ exec --no-startup-id nm-applet
 # LOCKING #
 ###########
 # Set the locking delay -> s [timeout [cycle]]
-exec --no-startup-id xset s 300 5
+#exec --no-startup-id xset s 300 5
 # Set xss-lock to xsecurelock
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_PARANOID_PASSWORD=1 XSECURELOCK_FONT="Hack" XSECURELOCK_DATETIME_FORMAT="%A %e %B %G %T (%z %Z)" xsecurelock
 # Set the keybind for manual locking
@@ -265,6 +265,13 @@ smart_gaps on
 
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders no_gaps
+
+# KDE Connect
+exec --no-startup-id /usr/lib/kdeconnectd
+exec --no-startup-id /usr/bin/kdeconnect-indicator
+
+# Start notification server
+exec --no-startup-id /usr/bin/dunst
 
 # i3-gaps runtime gap manipulation from https://github.com/Airblader/i3/wiki/Example-Configuration
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
